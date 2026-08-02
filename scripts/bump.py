@@ -34,35 +34,38 @@ def main():
     version = tag[1:]
 
     changed = False
+    sums = urllib.request.urlopen(
+        "https://github.com/%s/releases/download/%s/SHA256SUMS" % (REPO, tag)
+    ).read().decode().splitlines()
+    hashes = {}
+    for line in sums:
+        h, name = line.split()
+        hashes[name] = h
+
+    url_re = re.compile(
+        r'url "https://github\.com/%s/releases/download/v[^/]+/([^"/]+)"'
+        % re.escape(REPO)
+    )
+    sha_re = re.compile(r'^(\s*sha256 ")[0-9a-f]{64}(")')
+
     for formula in FORMULAS:
         with open(formula) as f:
             text = f.read()
         cur = re.search(r'version "([^"]+)"', text)
-        if cur and cur.group(1) == version:
-            print("%s already at %s" % (formula, version))
-            continue
+        same_version = cur is not None and cur.group(1) == version
 
-        sums = urllib.request.urlopen(
-            "https://github.com/%s/releases/download/%s/SHA256SUMS" % (REPO, tag)
-        ).read().decode().splitlines()
-        hashes = {}
-        for line in sums:
-            h, name = line.split()
-            hashes[name] = h
-
-        url_re = re.compile(
-            r'url "https://github\.com/%s/releases/download/v[^/]+/([^"/]+)"'
-            % re.escape(REPO)
-        )
-        sha_re = re.compile(r'^(\s*sha256 ")[0-9a-f]{64}(")')
-
+        # Hashes are reconciled even when the version matches: a force-pushed
+        # release (tag moved to a rebuilt commit) changes the binaries under
+        # the same version string, and a stale hash would break every
+        # installation.
         out = []
         pending_asset = None
         for line in text.splitlines(keepends=True):
             m = url_re.search(line)
             if m:
                 pending_asset = m.group(1)
-                line = line.replace("download/v" + cur.group(1), "download/" + tag)
+                if not same_version:
+                    line = line.replace("download/v" + cur.group(1), "download/" + tag)
             m2 = sha_re.match(line)
             if m2 and pending_asset:
                 if pending_asset not in hashes:
@@ -70,11 +73,17 @@ def main():
                 line = m2.group(1) + hashes[pending_asset] + m2.group(2) + "\n"
             out.append(line)
 
-        newtext = re.sub(r'version "[^"]+"', 'version "%s"' % version, "".join(out), count=1)
-        with open(formula, "w") as f:
-            f.write(newtext)
-        changed = True
-        print("%s bumped to %s" % (formula, version))
+        newtext = "".join(out)
+        if not same_version:
+            newtext = re.sub(r'version "[^"]+"', 'version "%s"' % version, newtext, count=1)
+
+        if newtext != text:
+            with open(formula, "w") as f:
+                f.write(newtext)
+            changed = True
+            print("%s updated to %s" % (formula, version))
+        else:
+            print("%s already at %s" % (formula, version))
 
     if changed:
         env_path = os.environ.get("GITHUB_ENV")
