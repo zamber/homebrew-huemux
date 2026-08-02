@@ -1,0 +1,34 @@
+# Keeps the formulas pinned to the newest huemux release. Runs every six
+# hours and on demand; a run commits and pushes a bump only when the latest
+# release differs from the formulas' versions. No cross-repo secrets: the
+# workflow's own GITHUB_TOKEN can read the public release API and write
+# this repo.
+name: Auto-bump
+
+on:
+  schedule:
+    - cron: "23 */6 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  bump:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Bump formulas
+        run: python3 scripts/bump.py
+        env:
+          GH_TOKEN: ${{ github.token }}
+
+      - name: Commit and push
+        if: env.TAP_BUMPED_VERSION != ''
+        run: |
+          git config user.name "HueMux Tap Bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add huemux.rb huemux-desktop.rb
+          git commit -m "Bump formulas to $TAP_BUMPED_VERSION"
+          git push
