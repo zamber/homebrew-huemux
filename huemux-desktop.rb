@@ -1,10 +1,10 @@
 class HuemuxDesktop < Formula
   desc "Screen-synced lights for Philips Hue, in a desktop window"
   homepage "https://github.com/zamber/huemux"
-  url "https://github.com/zamber/huemux/releases/download/v0.0.2-alpha.35/huemux-desktop-darwin-arm64",
+  url "https://github.com/zamber/huemux/releases/download/v0.0.2-alpha.37/huemux-desktop-darwin-arm64",
       using: :nounzip
-  sha256 "bdb64ff10b241477b72a4e3412b9a7dca9a3f12cff1fe0b65ef7c9d0c7bd22e0"
-  version "0.0.2-alpha.35"
+  sha256 "7eb5ff1a11683c4a4a173c906e6ff88bee39af2d58ca8f9045f16df47bc6e835"
+  version "0.0.2-alpha.37"
   license "GPL-3.0-or-later"
 
   # The release ships one raw binary per OS/arch. Assets are replaced by
@@ -13,22 +13,22 @@ class HuemuxDesktop < Formula
 
   on_macos do
     on_intel do
-      url "https://github.com/zamber/huemux/releases/download/v0.0.2-alpha.35/huemux-desktop-darwin-amd64",
+      url "https://github.com/zamber/huemux/releases/download/v0.0.2-alpha.37/huemux-desktop-darwin-amd64",
           using: :nounzip
-      sha256 "4fb75d46a1b0e1a4cdf34e1fc4204f0cf16b453f0f5f60e6a3c7bfefc3bd7da8"
+      sha256 "9ddf03bf10def96737a3ed93720ebaf939d3df42a643f27c9c166b17a18314b8"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/zamber/huemux/releases/download/v0.0.2-alpha.35/huemux-desktop-linux-amd64",
+      url "https://github.com/zamber/huemux/releases/download/v0.0.2-alpha.37/huemux-desktop-linux-amd64",
           using: :nounzip
-      sha256 "ac0bb8c88185ff51a0dfef3ae93f22f82a06ab41c34c7ece3bd112ad791720d0"
+      sha256 "2636afa0536f3875ed8d788bc6c1906ed903270f1bef9a2d9d832317f9c273f5"
     end
     on_arm do
-      url "https://github.com/zamber/huemux/releases/download/v0.0.2-alpha.35/huemux-desktop-linux-arm64",
+      url "https://github.com/zamber/huemux/releases/download/v0.0.2-alpha.37/huemux-desktop-linux-arm64",
           using: :nounzip
-      sha256 "5c4933b1e1002b3ac71272e5106088279138f2d389227af2ce750cdef68b83f9"
+      sha256 "971b3e19e5b89b4e84c3893a15256d9437d4f112c8f81d53490bf00be948fb3a"
     end
   end
 
