@@ -1,10 +1,10 @@
 class HuemuxDesktop < Formula
   desc "Screen-synced lights for Philips Hue, in a desktop window"
   homepage "https://github.com/zamber/huemux"
-  url "https://github.com/zamber/huemux/releases/download/v0.0.4-alpha.4/huemux-desktop-darwin-arm64",
+  url "https://github.com/zamber/huemux/releases/download/v0.0.4-alpha.7/huemux-desktop-darwin-arm64",
       using: :nounzip
-  sha256 "4c77ec4fbad8ae2987f1b09971972a7e51f3b01bb11b4d6e9e86c06492bd9819"
-  version "0.0.4-alpha.4"
+  sha256 "f5282f3653b830b78309e30db6ea361e87a9265446436268db18df3c7c1c5e4e"
+  version "0.0.4-alpha.7"
   license "GPL-3.0-or-later"
 
   # The release ships one raw binary per OS/arch. Assets are replaced by
@@ -13,22 +13,22 @@ class HuemuxDesktop < Formula
 
   on_macos do
     on_intel do
-      url "https://github.com/zamber/huemux/releases/download/v0.0.4-alpha.4/huemux-desktop-darwin-amd64",
+      url "https://github.com/zamber/huemux/releases/download/v0.0.4-alpha.7/huemux-desktop-darwin-amd64",
           using: :nounzip
-      sha256 "ccb6172bebfb970f6f446e71071fe6408cfdf18c533803f72640f130c32b79f5"
+      sha256 "63be64db3e442ee6ddbba53be81a5c7fa99a31438aaf4ec561d2301bb2cb040b"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/zamber/huemux/releases/download/v0.0.4-alpha.4/huemux-desktop-linux-amd64",
+      url "https://github.com/zamber/huemux/releases/download/v0.0.4-alpha.7/huemux-desktop-linux-amd64",
           using: :nounzip
-      sha256 "f6e525d03741137d1c5952422a5cffdf8e402005f90add8fa9b05c896bfb6ff5"
+      sha256 "bb1a20a2b8969e11abb19c7869b1650cbe03e0147647d8d401893f25ef70ae51"
     end
     on_arm do
-      url "https://github.com/zamber/huemux/releases/download/v0.0.4-alpha.4/huemux-desktop-linux-arm64",
+      url "https://github.com/zamber/huemux/releases/download/v0.0.4-alpha.7/huemux-desktop-linux-arm64",
           using: :nounzip
-      sha256 "6935e9ba72a87e361478fd0e0dd4696ccdbf0d41d9e6da45cec4a67e2d10a308"
+      sha256 "ce37045b98710cdf536ff271260daba92ac0116e6168f77e180097929cb869e9"
     end
   end
 
