@@ -1,10 +1,10 @@
 class Huemux < Formula
   desc "Screen-synced lights for Philips Hue — plain server"
   homepage "https://github.com/zamber/huemux"
-  url "https://github.com/zamber/huemux/releases/download/v0.0.4/huemux-darwin-arm64",
+  url "https://github.com/zamber/huemux/releases/download/v0.0.5-alpha.1/huemux-darwin-arm64",
       using: :nounzip
-  sha256 "a4751404160d220e3fe6adbf9b0df7fec16c492e5865267144b0379f1c32a6c0"
-  version "0.0.4"
+  sha256 "635d3ed373d58692f59dd6be3a18948d1be4c02a70d121aae5a42a223a09a430"
+  version "0.0.5-alpha.1"
   license "GPL-3.0-or-later"
 
   # The release ships one raw binary per OS/arch. Assets are replaced by
@@ -13,22 +13,22 @@ class Huemux < Formula
 
   on_macos do
     on_intel do
-      url "https://github.com/zamber/huemux/releases/download/v0.0.4/huemux-darwin-amd64",
+      url "https://github.com/zamber/huemux/releases/download/v0.0.5-alpha.1/huemux-darwin-amd64",
           using: :nounzip
-      sha256 "ebdb434cb3f818a8bfcd8737a9d2107994054c25ec16b32d6f7b70604f3616fa"
+      sha256 "a5896b2bfd6f5ce65e2c267cd2b695e63389681c411a183a797c6bb0f4f54630"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/zamber/huemux/releases/download/v0.0.4/huemux-linux-amd64",
+      url "https://github.com/zamber/huemux/releases/download/v0.0.5-alpha.1/huemux-linux-amd64",
           using: :nounzip
-      sha256 "2e8474596bed1dcff54334094519d1ce303a9fdef3c616081843f7c9e8ab7445"
+      sha256 "bd80833723f51f3513305e49882afef01dd690f8bb4c0080613acec0dc2b2c7a"
     end
     on_arm do
-      url "https://github.com/zamber/huemux/releases/download/v0.0.4/huemux-linux-arm64",
+      url "https://github.com/zamber/huemux/releases/download/v0.0.5-alpha.1/huemux-linux-arm64",
           using: :nounzip
-      sha256 "42ad8595daa0763dbc95cb77559ad6a2ecaee7f2a902fe79126a55e743f21322"
+      sha256 "0ada7afc3e6e58f75ac1e46a697e2994fcde96482f35cae5659b5914bf0acd18"
     end
   end
 

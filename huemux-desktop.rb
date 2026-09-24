@@ -1,10 +1,10 @@
 class HuemuxDesktop < Formula
   desc "Screen-synced lights for Philips Hue, in a desktop window"
   homepage "https://github.com/zamber/huemux"
-  url "https://github.com/zamber/huemux/releases/download/v0.0.4/huemux-desktop-darwin-arm64",
+  url "https://github.com/zamber/huemux/releases/download/v0.0.5-alpha.1/huemux-desktop-darwin-arm64",
       using: :nounzip
-  sha256 "bd1744604bf0b6425408735b276feaf0adbf7c4bbd0410e545977d546d966eed"
-  version "0.0.4"
+  sha256 "cc776121e30aa2efc2be6a74e8c1a8da0b44df884c8e1b7e3a8254e7c5c58f72"
+  version "0.0.5-alpha.1"
   license "GPL-3.0-or-later"
 
   # The release ships one raw binary per OS/arch. Assets are replaced by
@@ -13,22 +13,22 @@ class HuemuxDesktop < Formula
 
   on_macos do
     on_intel do
-      url "https://github.com/zamber/huemux/releases/download/v0.0.4/huemux-desktop-darwin-amd64",
+      url "https://github.com/zamber/huemux/releases/download/v0.0.5-alpha.1/huemux-desktop-darwin-amd64",
           using: :nounzip
-      sha256 "b9d3a8744316804ee985833b8ab8a7cf33ebce39c00b7d6e680dbb9e52d74738"
+      sha256 "032960e0d22b9401390669ae6b9cfea36a8152aaa91b58d8e311ce62c84015bf"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/zamber/huemux/releases/download/v0.0.4/huemux-desktop-linux-amd64",
+      url "https://github.com/zamber/huemux/releases/download/v0.0.5-alpha.1/huemux-desktop-linux-amd64",
           using: :nounzip
-      sha256 "ec5ce3e71feba910ae0eda54093186d7d8ccef5b13aed4206ec4362a6341263d"
+      sha256 "7993fa2407212500a6bf02a4a55be45ba509aca49a22bdfaa1715f1834cc6747"
     end
     on_arm do
-      url "https://github.com/zamber/huemux/releases/download/v0.0.4/huemux-desktop-linux-arm64",
+      url "https://github.com/zamber/huemux/releases/download/v0.0.5-alpha.1/huemux-desktop-linux-arm64",
           using: :nounzip
-      sha256 "72a37f76be71f857b33309ce9e784c6ba5d668e37396ed299b4bcc379f67f5e8"
+      sha256 "85f2538ab6d37ee1710df2544b539188dfc50bf7c9052da9f993f3c0d6e64f46"
     end
   end
 
