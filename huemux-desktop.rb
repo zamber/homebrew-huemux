@@ -1,10 +1,10 @@
 class HuemuxDesktop < Formula
   desc "Screen-synced lights for Philips Hue, in a desktop window"
   homepage "https://github.com/zamber/huemux"
-  url "https://github.com/zamber/huemux/releases/download/v0.0.5-alpha.1/huemux-desktop-darwin-arm64",
+  url "https://github.com/zamber/huemux/releases/download/v0.0.5-alpha.2/huemux-desktop-darwin-arm64",
       using: :nounzip
-  sha256 "cc776121e30aa2efc2be6a74e8c1a8da0b44df884c8e1b7e3a8254e7c5c58f72"
-  version "0.0.5-alpha.1"
+  sha256 "84e9f4ce380b05150d0ae5cea98d271b0059f54056eb882a8374131854ce14a2"
+  version "0.0.5-alpha.2"
   license "GPL-3.0-or-later"
 
   # The release ships one raw binary per OS/arch. Assets are replaced by
@@ -13,22 +13,22 @@ class HuemuxDesktop < Formula
 
   on_macos do
     on_intel do
-      url "https://github.com/zamber/huemux/releases/download/v0.0.5-alpha.1/huemux-desktop-darwin-amd64",
+      url "https://github.com/zamber/huemux/releases/download/v0.0.5-alpha.2/huemux-desktop-darwin-amd64",
           using: :nounzip
-      sha256 "032960e0d22b9401390669ae6b9cfea36a8152aaa91b58d8e311ce62c84015bf"
+      sha256 "98542798900be3642aac03b9b194edcc33d4f46e10d99c2754074cf3f7a284d5"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/zamber/huemux/releases/download/v0.0.5-alpha.1/huemux-desktop-linux-amd64",
+      url "https://github.com/zamber/huemux/releases/download/v0.0.5-alpha.2/huemux-desktop-linux-amd64",
           using: :nounzip
-      sha256 "7993fa2407212500a6bf02a4a55be45ba509aca49a22bdfaa1715f1834cc6747"
+      sha256 "4b652115c277695c15fe3e4a7c8a099774e6badad0a0535091f1d59d2015b4f0"
     end
     on_arm do
-      url "https://github.com/zamber/huemux/releases/download/v0.0.5-alpha.1/huemux-desktop-linux-arm64",
+      url "https://github.com/zamber/huemux/releases/download/v0.0.5-alpha.2/huemux-desktop-linux-arm64",
           using: :nounzip
-      sha256 "85f2538ab6d37ee1710df2544b539188dfc50bf7c9052da9f993f3c0d6e64f46"
+      sha256 "ee9d38247d540b866370e6ba185dce950baa07adea6cc1e09d87500506879348"
     end
   end
 
