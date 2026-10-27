@@ -1,10 +1,10 @@
 class HuemuxDesktop < Formula
   desc "Screen-synced lights for Philips Hue, in a desktop window"
   homepage "https://github.com/zamber/huemux"
-  url "https://github.com/zamber/huemux/releases/download/v0.0.5-alpha.6/huemux-desktop-darwin-arm64",
+  url "https://github.com/zamber/huemux/releases/download/v0.0.5-alpha.8/huemux-desktop-darwin-arm64",
       using: :nounzip
-  sha256 "9ed4a6a120f289fd8d057411bbd91bf5a143d79e369b363192f3da2516a79dfa"
-  version "0.0.5-alpha.6"
+  sha256 "545d33954dd030b448034f7c978229f822443bc4000e31e7387bb83166e4cc80"
+  version "0.0.5-alpha.8"
   license "GPL-3.0-or-later"
 
   # The release ships one raw binary per OS/arch. Assets are replaced by
@@ -13,22 +13,22 @@ class HuemuxDesktop < Formula
 
   on_macos do
     on_intel do
-      url "https://github.com/zamber/huemux/releases/download/v0.0.5-alpha.6/huemux-desktop-darwin-amd64",
+      url "https://github.com/zamber/huemux/releases/download/v0.0.5-alpha.8/huemux-desktop-darwin-amd64",
           using: :nounzip
-      sha256 "843a78a464e61b478f4d2867575b8d1626e69dd036810c9d212edb83c281baaf"
+      sha256 "e132b9cc0984d0aedd120631bb62959dcf64cec6b948e87f5f80ab68f40d6b94"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/zamber/huemux/releases/download/v0.0.5-alpha.6/huemux-desktop-linux-amd64",
+      url "https://github.com/zamber/huemux/releases/download/v0.0.5-alpha.8/huemux-desktop-linux-amd64",
           using: :nounzip
-      sha256 "39e3e014eb321791910a4dd7d85af470ca25932a621f12d2126fcbdc6bb0f3a5"
+      sha256 "782e36e5e8a7b6f68a6314d4410b481a3e65412022288a51aa687cc4f0d67fd4"
     end
     on_arm do
-      url "https://github.com/zamber/huemux/releases/download/v0.0.5-alpha.6/huemux-desktop-linux-arm64",
+      url "https://github.com/zamber/huemux/releases/download/v0.0.5-alpha.8/huemux-desktop-linux-arm64",
           using: :nounzip
-      sha256 "69bfd818855faf2cad65e734319e061c2c5a52bf5598961ec33477ac93d15c0e"
+      sha256 "e9e62d0d0b1767b0ff5fd4df8ab8264289667257c0fe78ed250a83a5112ddc5a"
     end
   end
 
